@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task1 - form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="signupForm">
+    <input for = "name" name="name" value=""  />
+    <input class = "email" name="email" value="" validate-required validate-email />
+    <input for = "date" name="date" value="" validate-date />
+    <input class = "ip" name="ip" value="" validate-regexp="^\d+\.\d+\.\d+\.\d+$" />
+    <input type="submit" value="Send" />
+  </form>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+  <script  src="script.js"></script>
+</body>
+</html>
