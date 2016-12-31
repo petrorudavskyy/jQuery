@@ -1,6 +1,3 @@
-if (document.location.protocol == "https:")
-        document.location='http://petrorudavskyy.github.io/jQuery/task1/index'; 
-
 $('form').attr('onsubmit', 'return validate()');
 //add atributes to inputs
 $('[name="name"]').attr('placeholder','Enter Name');
