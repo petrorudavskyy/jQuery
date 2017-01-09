@@ -1,21 +1,25 @@
 //make full changes in script, bad validate
 //function
 $(function() {
-    //added new mathod to validate function
-    $.validator.addMethod('IP4Checker', function(value) {
-      var split = value.split('.');
-        if (split.length != 4) 
-          return false;
+  //added new mathod to validate function
+  $.validator.addMethod('IP4Checker', function(value) {
+    var split = value.split('.');
+      if (split.length != 4) 
+        return false;
             
-        for (var i=0; i<split.length; i++) {
-          var s = split[i];
-            if (s.length==0 || isNaN(s) || s<0 || s>255)
-              return false;
-        }
+      for (var i=0; i<split.length; i++) {
+        var s = split[i];
+          if (s.length==0 || isNaN(s) || s<0 || s>255)
+            return false;
+      }
     return true;
-}, ' Invalid IP Address');
-
-  
+}, 'Invalid IP Address');
+  //added new method for check date
+  $.validator.addMethod('DateChecker', function(value){
+    var date = "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$";
+      return value.match(date);
+  }, 'Invalid Date');
+    
     // validation to form n html
     $("#register-form").validate({
     
@@ -35,7 +39,7 @@ $(function() {
           //date
             date:{
               required: true,
-              date: true
+              DateChecker: true
             },
           //io
             ip: {
